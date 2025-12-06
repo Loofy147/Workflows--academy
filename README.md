@@ -21,6 +21,13 @@ This repository is structured to guide you from foundational concepts to advance
 - **/templates**: Practical, ready-to-use pipeline configurations for a variety of platforms (e.g., GitHub Actions, GitLab CI, Jenkins) and technology stacks (e.g., Node.js, Python, Go, Java).
 - **/docs**: Supporting documentation, tutorials, and case studies to help you get the most out of the resources in this repository.
 
+### Available Templates
+
+As of the latest update, the following templates are available:
+
+- **Node.js**: A comprehensive workflow for Node.js applications, including stages for linting, unit testing, security scanning with `npm audit`, and building a Docker image. Available for both [GitHub Actions](./templates/github-actions/nodejs-app.yml) and [GitLab CI](./templates/gitlab-ci/nodejs-app.yml).
+- **Python**: A robust workflow for Python applications, featuring dependency management with `pip`, linting with `flake8`, and testing with `pytest`. Available for both [GitHub Actions](./templates/github-actions/python-app.yml) and [GitLab CI](./templates/gitlab-ci/python-app.yml).
+
 ### Who Is This For?
 
 - **Developers**: Learn how to build and maintain pipelines that improve your productivity and code quality.

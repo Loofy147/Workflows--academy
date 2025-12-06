@@ -1,0 +1,32 @@
+# GitLab CI/CD Workflow for Python Applications
+#
+# This template provides a robust starting point for building, testing, and
+# linting a typical Python application. It includes stages for dependency
+# management, linting with flake8, and testing with pytest.
+#
+# For more information on GitLab CI, see:
+# https://docs.gitlab.com/ee/ci/
+
+image: python:3.10
+
+stages:
+  - lint
+  - test
+
+# Cache pip dependencies to speed up subsequent jobs
+cache:
+  paths:
+    - .cache/pip/
+
+before_script:
+  - pip install -r requirements.txt
+
+lint:
+  stage: lint
+  script:
+    - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+test:
+  stage: test
+  script:
+    - pytest
