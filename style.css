@@ -1,0 +1,119 @@
+/* Basic Reset & Typography */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+}
+
+/* Header */
+header {
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+/* Hero Section */
+.hero {
+    background: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    margin: 20px auto 40px;
+}
+
+.cta-form form {
+    display: flex;
+    justify-content: center;
+    max-width: 480px;
+    margin: 20px auto 0;
+}
+
+.cta-form input[type="email"] {
+    flex-grow: 1;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.cta-form button {
+    padding: 15px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+}
+
+.feature-steps {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    gap: 30px;
+}
+
+.step h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    color: #777;
+}
