@@ -21,11 +21,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install lizard radon[colorama] lizard-cognitive-complexity
+          pip install lizard radon[colorama]
       - name: Generate lizard report
-        run: lizard . --xml --CCN > lizard-report.xml
-      - name: Analyze lizard report
-        run: python check_lizard_metrics.py lizard-report.xml --cc 15 --cognitive-complexity 10
+        run: lizard . --xml > lizard-report.xml
+      - name: Generate radon report
+        run: radon cc . -j > radon-report.json
+      - name: Analyze complexity reports
+        run: python check_complexity_metrics.py --lizard-report lizard-report.xml --radon-report radon-report.json --cc 15 --cognitive-complexity 10
       - name: Run radon for Maintainability Index
         run: radon mi . --max B -s
       - name: Check for duplicate code
