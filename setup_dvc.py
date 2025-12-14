@@ -10,6 +10,9 @@ if not os.path.exists(".dvc"):
 try:
     subprocess.run(["git", "rev-parse", "--verify", "dvc-storage"], check=True, capture_output=True)
 except subprocess.CalledProcessError:
+    # Configure Git user
+    subprocess.run(["git", "config", "--global", "user.name", "github-actions[bot]"], check=True)
+    subprocess.run(["git", "config", "--global", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
     # Create a new branch for DVC storage
     subprocess.run(["git", "checkout", "-b", "dvc-storage"], check=True)
     subprocess.run(["git", "commit", "--allow-empty", "-m", "Initialize dvc-storage branch"], check=True)

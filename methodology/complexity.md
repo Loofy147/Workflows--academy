@@ -26,6 +26,6 @@ By combining these metrics, you can create a comprehensive complexity management
 
 ## Implementation
 
-We provide a ready-to-use GitHub Actions workflow to automate complexity analysis. You can find it at [`templates/github-actions/complexity-analysis.yml`](../templates/github-actions/complexity-analysis.yml).
+We provide a ready-to-use GitHub Actions workflow to automate complexity analysis. You can find it at [../.github/workflows/complexity-analysis.yml](../.github/workflows/complexity-analysis.yml).
 
 This workflow uses `lizard` and `radon` to analyze your Python code and report on the key metrics discussed in this document. You can customize the thresholds in the workflow file to match your project's standards.
