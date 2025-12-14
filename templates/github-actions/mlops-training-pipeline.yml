@@ -19,23 +19,21 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install "dvc[git]"
+      - name: Setup DVC
+        run: python setup_dvc.py
       - name: Validate data
         run: python validate_data.py
       - name: Train model
         run: python train_predictor.py
-      - name: Initialize DVC
-        run: dvc init -f
       - name: Add data and model to DVC
         run: |
           dvc add workflow_runs.csv
           dvc add predictor.joblib
-      - name: Configure DVC remote
-        run: |
-          dvc remote add -d local_remote /tmp/dvc-remote
       - name: Push data to DVC remote
         run: dvc push
       - name: Commit DVC metadata
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Update DVC metadata"
-          file_pattern: "*.dvc"
+          file_pattern: "*.dvc .dvc/config"
