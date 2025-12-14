@@ -1,0 +1,4 @@
+run_id,workflow_name,triggering_event,commit_sha,start_time,end_time,duration_seconds,status,error_log
+1,complexity-analysis,push,abc123,2024-01-01T12:00:00Z,2024-01-01T12:01:00Z,60,success,""
+2,complexity-analysis,push,def456,2024-01-01T12:02:00Z,2024-01-01T12:03:00Z,60,failure,"Error: something went wrong"
+3,complexity-analysis,pull_request,ghi789,2024-01-01T12:04:00Z,2024-01-01T12:05:00Z,60,success,""
