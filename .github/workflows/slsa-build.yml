@@ -1,0 +1,29 @@
+name: SLSA Build
+
+on:
+  release:
+    types: [created]
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Go binary
+        run: |
+          cd examples/go-hello-world
+          go build -o hello-world
+      - name: Generate SLSA provenance
+        uses: slsa-framework/slsa-github-generator@v1
+        with:
+          asset_path: examples/go-hello-world/hello-world
+      - name: Upload artifacts to release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            examples/go-hello-world/hello-world
+            examples/go-hello-world/hello-world.att
